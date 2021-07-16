@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org" >
+	<meta> 
+	<title> Srping Boot </title>
+	
+	<body>
+		<h1> Formulário de Emprego </h1>
+
+	<form action="#" th:action="@{/process}" th:object="${emprego}" method="post" >
+		Titulo: <input type="text" th:field="*{titulo}"> </input>		
+		<span th:if="${#fields.hasErrors('titulo')}"
+		th:errors="*{titulo}"
+		> </span> <br>
+		 
+		 Empresa:<input type="text" th:field="*{empresa}"> </input>		
+		<span th:if="${#fields.hasErrors('empresa')}" 
+			th:errors="*{empresa}"
+		> </span> <br>
+			
+		Descricao: <textarea rows="3" th:field="*{descricao}" > </textarea>
+		<span th:if="${#fields.hasErrors('descricao')}"
+			th:errors="*{descricao}"
+		> </span> <br>
+			
+			<input type="submit" value="Enviar" > </input>
+	</form>
+
+	</body>
+</html>

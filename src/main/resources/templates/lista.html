@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org" >
+	<meta> 
+	<title> Code Gate Curso</title>
+	
+	<body>
+		<h1> Lista de empregos </h1>
+	
+	
+		<h1> Formulário de Emprego </h1>
+		<a href="/add">Adicionar um novo emprego </a> <br>
+		
+		<div th:each="emprego : ${empregos}" >
+			<h4 th:inline="text" > [[${emprego.titulo}]] na [[${emprego.empresa}]]  </h4>
+			
+			<p th:text="${emprego.descricao}" >  </p>
+		</div>
+	</body>
+</html>
